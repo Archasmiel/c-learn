@@ -6,16 +6,17 @@ This directory contains the first ten `.c` files from the **c-learn** repository
 
 | Filename   | Description                                                  |
 |------------|--------------------------------------------------------------|
-| `prog1.c`  | Prints “Hello, World!” to the terminal.                      |
-| `prog2.c`  | Prints “Hello, World!” using a slightly different approach.  |
-| `prog3.c`  | Demonstrates handling of tabs and multiple spaces in input.  |
-| `prog4.c`  | Uses loops and formatted output to illustrate iteration.     |
-| `prog5.c`  | Reads characters until EOF and counts total input characters.|
-| `prog6.c`  | Reads until EOF and prints each word wrapped in quotes.      |
-| `prog7.c`  | Counts lines, words, and characters from standard input.     |
-| `prog8.c`  | Demonstrates classification of characters like digits/letters.|
-| `prog9.c`  | Processes input character-by-character, focusing on I/O.     |
-| `prog10.c` | An enhanced example of converting input to output via I/O loops.|
+| `prog1.c`  | Printing to the terminal.|
+| `prog2.c`  | Printing using a slightly different approach.|
+| `prog3.c`  | While loops and formatting in Celsius-Fahrenheit code.|
+| `prog4.c`  | Better version of `prog3.c` with for-loops.|
+| `prog5.c`  | Console reading, EOF.|
+| `prog6.c`  | For loop character counting, floating numbers.|
+| `prog7.c`  | Newline character counter, if conditions.|
+| `prog8.c`  | Newline, blank, tab counter, mass assignment.|
+| `prog9.c`  | Space character reducing between words.|
+| `prog10.c` | Unveiling of tabs, backspaces and backslashes.|
+| `prog11.c` | Line, char and word counting, word printing in new lines.|
 
 ## 🚀 How to Compile & Run
 

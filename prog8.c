@@ -5,9 +5,7 @@ int main()
     int c;
     int nl, bl, tb;
 
-    nl = 0;
-    bl = 0;
-    tb = 0;
+    nl = bl = tb = 0;
     while ((c = getchar()) != EOF)
     {
         if (c == ' ') bl++;
