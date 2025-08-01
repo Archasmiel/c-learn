@@ -1,6 +1,7 @@
-# C-Learn: First 10 Practice Programs
+# C-Learn: Practicing C language
 
-This directory contains the first ten `.c` files from the **c-learn** repository. Each program demonstrates core C language concepts with straightforward, standalone examples.
+This directory contains the `.c` files. <br>
+Each program demonstrates core C language concepts.
 
 ## Programs Overview
 
@@ -17,6 +18,12 @@ This directory contains the first ten `.c` files from the **c-learn** repository
 | `prog9.c`  | Space character reducing between words.|
 | `prog10.c` | Unveiling of tabs, backspaces and backslashes.|
 | `prog11.c` | Line, char and word counting, word printing in new lines.|
+| `prog12.c` | Number of digits, whitespaces and other chars in input.|
+| `prog13.c` | Frequency histogram (horizontal+vertical) of word lengths.|
+| `prog14.c` | Frequency histogram (horizontal) of alphabet chars.|
+| `prog15.c` | Functions, function prototypes, improving `prog4.c`.|
+| `prog16.c` | Array copying, maxword searching `without memory tools`.|
+| `prog17.c` | Arbitrary input length version of `prog16.c` `with memory tools`.|
 
 ## 🚀 How to Compile & Run
 
