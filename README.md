@@ -26,6 +26,7 @@ Each program demonstrates core C language concepts.
 | `prog17.c` | Arbitrary input length version of `prog16.c`, no memory tools.|
 | `prog18.c` | Printing lines that are bigger than 80 characters.|
 | `prog19.c` | Trailing tabs and newlines removing.|
+| `prog20.c` | Trimming line as `prog19.c`, also reversing input line.|
 
 ## 🚀 How to Compile & Run
 
