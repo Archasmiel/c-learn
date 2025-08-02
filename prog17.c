@@ -1,115 +1,58 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-int str_length(char *s);
-char *merge(char *a, char *b);
-int get_line(char **res);
-void print_str(char *s);
-char *str_dup(char *s);
+#define MAXLINE 1000
+
+int get_line(char line[], int maxline);
+void copy(char to[], char from[]);
 
 int main()
 {
-    int len, maxlen;
-    char *line;
-    char *maxline;
+    int len, max;
+    char line[MAXLINE];
+    char longest[MAXLINE];
 
-    line = maxline = NULL;
-    maxlen = 0;
-    while ((len = get_line(&line)) > 0) {
-        if (maxlen < len) {
-            free(maxline);
-            maxline = str_dup(line);
-            maxlen = len;
+    max = 0;
+    while ((len = get_line(line, MAXLINE)) > 0)
+    {
+        if (len > max) {
+            max = len;
+            copy(longest, line);
         }
-        free(line);
-        line = NULL;
     }
 
-    if (maxlen > 0) {
-        printf("\nLength: %d\nLine: ", maxlen);
-        print_str(maxline); // escaped output
-        printf("\n");
+    if (max > 0) {
+        printf("Longest line (size=%d):\n%s", max, longest);
     } else {
-        printf("0\n");
+        printf("No lines detected.");
     }
-
-    free(maxline);
 }
 
-int str_length(char *s)
-{
-    int len;
+int get_line(char s[], int limit) {
+    int c, i, len;
 
-    len = 0;
-    while (s[len] != '\0')
-    {
+    i = len = 0;
+    while ((c = getchar()) != EOF && c != '\n') {
+        if (i < limit-1) {
+            s[i] = c;
+            i++;
+        }
         len++;
     }
 
+    if (i < limit-1 && c == '\n') {
+        s[i] = c;
+        ++i;
+    }
+
+    s[i] = '\0';
     return len;
 }
 
-char *merge(char *a, char *b) {
-    size_t len_a = a ? strlen(a) : 0;
-    size_t len_b = strlen(b);
-    char *res = malloc(len_a + len_b + 1);
-    if (!res) return NULL;
+void copy(char to[], char from[]) {
+    int i;
 
-    if (a) strcpy(res, a);
-    else res[0] = '\0';
-
-    strcat(res, b);
-
-    free(a);
-    return res;
-}
-
-void print_str(char *s)
-{
-    int c, i = 0;
-
-    while ((c = s[i]) != '\0') {
-        if (c == '\n') printf("\\n");
-        else if (c == '\t') printf("\\t");
-        else if (c == '\\') printf("\\\\");
-        else printf("%c", c);
+    i = 0;
+    while ((to[i] = from[i]) != '\0') {
         i++;
     }
-
-    printf("\\0");
-}
-
-int get_line(char **s_out) {
-    int c, i = 0, len = 0;
-    char *res = NULL;
-    char buffer[256];
-
-    while ((c = getchar()) != '\n' && c != EOF) {
-        if (i == 255) {
-            buffer[i] = '\0';
-            res = merge(res, buffer);
-            i = 0;
-        }
-        buffer[i++] = c;
-        len++;
-    }
-
-    buffer[i] = '\0';
-    res = merge(res, buffer);
-
-    if (!res) {
-        res = malloc(1);
-        if (res) res[0] = '\0';
-    }
-
-    *s_out = res;
-    return len;
-}
-
-char *str_dup(char *s) {
-    int len = str_length(s);
-    char *copy = malloc(len + 1);
-    if (copy) strcpy(copy, s);
-    return copy;
 }

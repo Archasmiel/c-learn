@@ -22,8 +22,10 @@ Each program demonstrates core C language concepts.
 | `prog13.c` | Frequency histogram (horizontal+vertical) of word lengths.|
 | `prog14.c` | Frequency histogram (horizontal) of alphabet chars.|
 | `prog15.c` | Functions, function prototypes, improving `prog4.c`.|
-| `prog16.c` | Array copying, maxword searching `without memory tools`.|
-| `prog17.c` | Arbitrary input length version of `prog16.c` `with memory tools`.|
+| `prog16.c` | Array copying, maxword searching without memory tools.|
+| `prog17.c` | Arbitrary input length version of `prog16.c`, no memory tools.|
+| `prog18.c` | Printing lines that are bigger than 80 characters.|
+| `prog19.c` | Trailing tabs and newlines removing.|
 
 ## 🚀 How to Compile & Run
 
