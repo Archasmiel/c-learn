@@ -28,20 +28,19 @@ int main()
 }
 
 int get_line(char s[], int limit) {
-    int c, i, len;
+    int c, len, i;
 
-    i = len = 0;
+    len = i = 0;
     while ((c = getchar()) != EOF && c != '\n') {
-        if (i < limit-1) {
-            s[i] = c;
-            i++;
-        }
+        if (i < limit - 1)
+            s[i++] = c;
         len++;
     }
 
-    if (i < limit-1 && c == '\n') {
-        s[i] = c;
-        ++i;
+    if (c == '\n') {
+        if (i < limit-1)
+            s[i++] = c;
+        len++;
     }
 
     s[i] = '\0';

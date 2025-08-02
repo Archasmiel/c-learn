@@ -2,27 +2,26 @@
 
 #define MAXLINE 1000
 
-int get_line(char line[], int limit);
-int is_not_whitespace(int c);
+int get_line(char s[], int limit);
 int trim_line(char s[], int len);
+int is_not_whitespace(int c);
+void reverse(char s[], int len);
 
 int main() {
     int len;
     char line[MAXLINE];
 
-    while ((len = get_line(line, MAXLINE)) >= 0) {
+    while ((len = get_line(line, MAXLINE)) > 0) {
         len = trim_line(line, len);
         if (len > 0 && line[0] != '\n') { 
-            printf("trim(size=%d):%s", len, line);
+            reverse(line, len);
+            printf("reverse+trim(size=%d):%s", len, line);
             if (len > 0 && line[len - 1] != '\n') putchar('\n');
         } 
     }
 }
 
-// reads line of user input
-// maximum MAXLINE symbols
-// line is saved as "XXXXXX...\n\0..."
-// if full symbols "XXXXXXX...\0", what fits
+
 int get_line(char s[], int limit) {
     int c, len, i;
 
@@ -47,7 +46,6 @@ int is_not_whitespace(int c) {
     return !(c == ' ' || c == '\t');
 } 
 
-// line trimmer
 int trim_line(char s[], int len) {
     int i, j, in_word;
 
@@ -72,4 +70,15 @@ int trim_line(char s[], int len) {
 
     s[j] = '\0';
     return j;
+}
+
+void reverse(char s[], int len) {
+    int i, c;
+    int end = (len > 0 && s[len - 1] == '\n') ? len - 1 : len;
+
+    for (i = 0; i < end / 2; i++) {
+        c = s[i];
+        s[i] = s[end - 1 - i];
+        s[end - 1 - i] = c;
+    }
 }
