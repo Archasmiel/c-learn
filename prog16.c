@@ -2,7 +2,7 @@
 
 #define MAXLINE 1000
 
-int get_line(char line[], int maxline);
+int read_line(char line[], int maxline);
 void copy(char to[], char from[]);
 
 int main()
@@ -13,7 +13,7 @@ int main()
 
     // reading non-zero lines and copying only longest
     max = 0;
-    while ((len = get_line(line, MAXLINE)) > 0)
+    while ((len = read_line(line, MAXLINE)) > 0)
     {
         if (len > max)
         {
@@ -34,7 +34,7 @@ int main()
 
 // Reads line from console, with max limit
 // Returns real length of line
-int get_line(char s[], int limit)
+int read_line(char s[], int limit)
 {
     int c, i;
 

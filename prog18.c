@@ -2,13 +2,13 @@
 
 #define MAXLINE 1000
 
-int get_line(char line[], int limit);
+int read_line(char line[], int limit);
 
 int main() {
     int len;
     char line[MAXLINE];
 
-    while ((len = get_line(line, MAXLINE)) > 0) {
+    while ((len = read_line(line, MAXLINE)) > 0) {
         if (len > 80) {
             printf("Bigger than 80 char:%s", line);
             if (line[len - 1] != '\n') putchar('\n');
@@ -16,7 +16,7 @@ int main() {
     }
 }
 
-int get_line(char s[], int limit) {
+int read_line(char s[], int limit) {
     int c, len, i;
 
     len = i = 0;

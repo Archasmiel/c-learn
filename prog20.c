@@ -2,7 +2,7 @@
 
 #define MAXLINE 1000
 
-int get_line(char s[], int limit);
+int read_line(char s[], int limit);
 int trim_line(char s[], int len);
 int is_not_whitespace(int c);
 void reverse(char s[], int len);
@@ -11,7 +11,7 @@ int main() {
     int len;
     char line[MAXLINE];
 
-    while ((len = get_line(line, MAXLINE)) > 0) {
+    while ((len = read_line(line, MAXLINE)) > 0) {
         len = trim_line(line, len);
         if (len > 0 && line[0] != '\n') { 
             reverse(line, len);
@@ -22,7 +22,7 @@ int main() {
 }
 
 
-int get_line(char s[], int limit) {
+int read_line(char s[], int limit) {
     int c, len, i;
 
     len = i = 0;

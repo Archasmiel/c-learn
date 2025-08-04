@@ -27,6 +27,8 @@ Each program demonstrates core C language concepts.
 | `prog18.c` | Printing lines that are bigger than 80 characters.|
 | `prog19.c` | Trailing tabs and newlines removing.|
 | `prog20.c` | Trimming line as `prog19.c`, also reversing input line.|
+| `prog21.c` | Entab, unpacking all tabs to spaces.|
+| `prog22.c` | Detab, compressing spaces to fittest tabs.|
 
 ## 🚀 How to Compile & Run
 
