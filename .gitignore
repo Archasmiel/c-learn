@@ -2,3 +2,5 @@
 
 prog*
 !prog*.c
+!prog*.c.in
+!prog*.c.out
